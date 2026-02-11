@@ -1,27 +1,19 @@
 package oop_001_johnthor.week02
 
-import java.util.Scanner
+class Student(val name: String, val nim: String, var major: String) {
 
-fun main() {
-    val scanner = Scanner(System.`in`)
+    // Primary Constructor dengan validasi
+    init {
+        if (nim.length != 5) {
+            println("WARNING: Objek tercipta dengan NIM ($nim) yang tidak valid!")
+            println("Data mahasiswa $name mungkin akan bermasalah di sistem.")
+        } else {
+            println("LOG: Objek Student $name berhasil dialokasikan di Memory.")
+        }
+    }
 
-    println("-- APLIKASI PMB UNN ---")
-
-    print("Masukkan Nama: ")
-    val name = scanner.nextLine()
-
-    print("Masukkan NIM (Wajib 5 Karakter): ")
-    val nim = scanner.next()
-    scanner.nextLine() // Membersihkan buffer
-
-    print("Masukkan Jurusan: ")
-    val major = scanner.nextLine()
-
-    // Membuat objek Student
-    val student = Student(name, nim, major)
-
-    println("\nData Mahasiswa:")
-    println("Nama: ${student.name}")
-    println("NIM: ${student.nim}")
-    println("Jurusan: ${student.major}")
+    // Secondary Constructor (tanpa jurusan)
+    constructor(name: String, nim: String) : this(name, nim, "Non-Matriculated") {
+        println("LOG: Menggunakan constructor jalur umum (Tanpa Jurusan).")
+    }
 }
