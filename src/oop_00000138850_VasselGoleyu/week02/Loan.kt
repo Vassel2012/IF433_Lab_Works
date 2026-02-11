@@ -1,29 +1,31 @@
-package oop_00000138850_VasselGoleyu.week02
-
 package oop_001_johnthor.week02
 
-class Loan(
-    val bookTitle: String,
-    val borrower: String,
-    val loanDuration: Int = 7  // Default: 7 hari
-) {
+import java.util.Scanner
 
-    // Method untuk menghitung denda
-    fun calculateFine(): Int {
-        return if (loanDuration > 7) {
-            (loanDuration - 7) * 1000
-        } else {
-            0
-        }
-    }
+fun main() {
+    val scanner = Scanner(System.`in`)
 
-    // Method untuk menampilkan info peminjaman
-    fun displayLoanInfo() {
-        println("\n=== Informasi Peminjaman ===")
-        println("Judul Buku: $bookTitle")
-        println("Peminjam: $borrower")
-        println("Durasi Pinjam: $loanDuration hari")
-        println("Denda: Rp ${calculateFine()}")
-        println("=============================")
+    println("=== SISTEM PERPUSTAKAN ===")
+
+    print("Masukkan judul buku: ")
+    val bookTitle = scanner.nextLine()
+
+    print("Masukkan nama peminjam: ")
+    val borrower = scanner.nextLine()
+
+    print("Masukkan durasi pinjam (hari, default 7): ")
+    val durationInput = scanner.nextLine()
+    val loanDuration = if (durationInput.isBlank()) 7 else durationInput.toInt()
+
+    // Membuat objek Loan
+    val loan = Loan(bookTitle, borrower, loanDuration)
+    loan.displayLoanInfo()
+
+    // Cek apakah ada denda
+    val fine = loan.calculateFine()
+    if (fine > 0) {
+        println("PERINGATAN: Terlambat mengembalikan! Denda: Rp $fine")
+    } else {
+        println("Tidak ada denda. Silakan kembalikan tepat waktu!")
     }
 }
