@@ -1,8 +1,12 @@
 package oop_001_johnthor.week02
 
-class Student(val name: String, val nim: String, var major: String) {
+class Student(
+    val name: String,
+    val nim: String,
+    var gpa: Double = 0.0,  // Default Argument
+    var major: String
+) {
 
-    // Primary Constructor dengan validasi
     init {
         if (nim.length != 5) {
             println("WARNING: Objek tercipta dengan NIM ($nim) yang tidak valid!")
@@ -12,8 +16,17 @@ class Student(val name: String, val nim: String, var major: String) {
         }
     }
 
-    // Secondary Constructor (tanpa jurusan)
-    constructor(name: String, nim: String) : this(name, nim, "Non-Matriculated") {
+    constructor(name: String, nim: String) : this(name, nim, major = "Non-Matriculated") {
         println("LOG: Menggunakan constructor jalur umum (Tanpa Jurusan).")
+    }
+
+    // Method untuk menampilkan info student
+    fun displayInfo() {
+        println("=== Informasi Mahasiswa ===")
+        println("Nama: $name")
+        println("NIM: $nim")
+        println("Jurusan: $major")
+        println("IPK: $gpa")
+        println("==========================")
     }
 }
