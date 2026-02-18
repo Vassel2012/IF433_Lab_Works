@@ -7,7 +7,18 @@ class Employee {
             if (value < 0) {
                 println("Salary tidak boleh negatif")
             } else {
-                field = value   // ✅ gunakan backing field
+                field = value
             }
         }
+
+    private var performanceRating: Int = 0
+
+    fun updatePerformance(rating: Int) {
+        if (rating in 1..5) {
+            performanceRating = rating
+            println("Performance updated to $performanceRating")
+        } else {
+            println("Rating harus antara 1 sampai 5")
+        }
+    }
 }
