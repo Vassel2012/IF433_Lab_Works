@@ -1,9 +1,9 @@
-package oop_001_VasselGoleyu.week02
+package oop_00000138850_VasselGoleyu.week02
 
 class Student(
     val name: String,
     val nim: String,
-    var gpa: Double = 0.0,  // Default Argument
+    var gpa: Double = 0.0,  
     var major: String
 ) {
 
@@ -20,7 +20,6 @@ class Student(
         println("LOG: Menggunakan constructor jalur umum (Tanpa Jurusan).")
     }
 
-    // Method untuk menampilkan info student
     fun displayInfo() {
         println("=== Informasi Mahasiswa ===")
         println("Nama: $name")
