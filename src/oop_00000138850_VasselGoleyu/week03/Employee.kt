@@ -4,6 +4,10 @@ class Employee {
 
     var salary: Int = 0
         set(value) {
-            this.salary = value
+            if (value < 0) {
+                println("Salary tidak boleh negatif")
+            } else {
+                field = value   // ✅ gunakan backing field
+            }
         }
 }
