@@ -1,7 +1,5 @@
 package oop_00000138850_VasselGoleyu.week02
 
-package oop_001_johnthor.week02
-
 import java.util.Scanner
 
 fun main() {
