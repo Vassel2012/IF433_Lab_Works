@@ -1,6 +1,12 @@
 package oop_00000138850_VasselGoleyu.week03
 
-fun main() {
-    val e = Employee()
-    e.salary = 5000
+class Employee {
+    var salary: Int = 0
+        set(value) {
+            if (value < 0) {
+                println("Gaji tidak boleh negatif")
+            } else {
+                field = value
+            }
+        }
 }
