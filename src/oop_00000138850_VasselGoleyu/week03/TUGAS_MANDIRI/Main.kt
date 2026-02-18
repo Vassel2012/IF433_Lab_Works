@@ -1,10 +1,36 @@
-package oop_00000138850_VasselGoleyu.week03.TUGAS_MANDIRI
+package oop_00000138850_VasselGoleyu.week03
 
-val weapon = Weapon("Excalibur")
+fun main() {
 
-weapon.damage = -10
-weapon.damage = 1200
+    println("===== TESTING WEAPON =====")
 
-println("Weapon: ${weapon.name}")
-println("Damage: ${weapon.damage}")
-println("Tier: ${weapon.tier}")
+    val sword = Weapon("Excalibur")
+
+    sword.damage = -50        // invalid
+    sword.damage = 300        // rare
+    sword.printWeaponInfo()
+
+    sword.damage = 900        // legendary
+    sword.printWeaponInfo()
+
+    sword.damage = 5000       // auto clamp to 1000
+    sword.printWeaponInfo()
+
+
+    println("\n===== TESTING PLAYER =====")
+
+    val player = Player("Vassel")
+
+    player.printPlayerInfo()
+
+    player.addXp(50)
+    player.printPlayerInfo()
+
+    player.addXp(70)
+    player.printPlayerInfo()
+
+    player.addXp(300)
+    player.printPlayerInfo()
+
+    player.addXp(-10)  // invalid
+}
