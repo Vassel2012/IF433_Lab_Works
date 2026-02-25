@@ -1,4 +1,4 @@
-package oop_00000138850_VasselGoleyu.week02
+package oop_00000138850_VasselGoleyu.Week02
 
 import java.util.Scanner
 
@@ -15,7 +15,9 @@ fun main() {
 
     print("Masukkan durasi pinjam (hari, default 7): ")
     val durationInput = scanner.nextLine()
+
     val loanDuration = if (durationInput.isBlank()) 7 else durationInput.toInt()
+
     val loan = Loan(bookTitle, borrower, loanDuration)
     loan.displayLoanInfo()
 
@@ -24,5 +26,30 @@ fun main() {
         println("PERINGATAN: Terlambat mengembalikan! Denda: Rp $fine")
     } else {
         println("Tidak ada denda. Silakan kembalikan tepat waktu!")
+    }
+}
+
+class Loan(
+    private val bookTitle: String,
+    private val borrower: String,
+    private val duration: Int
+) {
+
+    fun displayLoanInfo() {
+        println("\n=== INFORMASI PINJAMAN ===")
+        println("Judul Buku: $bookTitle")
+        println("Peminjam: $borrower")
+        println("Durasi: $duration hari")
+    }
+
+    fun calculateFine(): Int {
+        val maxDays = 7
+        val finePerDay = 2000
+
+        return if (duration > maxDays) {
+            (duration - maxDays) * finePerDay
+        } else {
+            0
+        }
     }
 }

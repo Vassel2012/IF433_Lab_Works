@@ -1,4 +1,4 @@
-package oop_00000138850_VasselGoleyu.week02
+package oop_00000138850_VasselGoleyu.Week02
 
 import java.util.Scanner
 
@@ -24,3 +24,9 @@ fun main() {
     println("NIM: ${student.nim}")
     println("Jurusan: ${student.major}")
 }
+
+class Student(
+    val name: String,
+    val nim: String,
+    val major: String
+)

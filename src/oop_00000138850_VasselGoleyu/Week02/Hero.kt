@@ -1,4 +1,4 @@
-package oop_00000138850_VasselGoleyu.week02
+package oop_00000138850_VasselGoleyu.Week02
 
 class Hero(
     val name: String,

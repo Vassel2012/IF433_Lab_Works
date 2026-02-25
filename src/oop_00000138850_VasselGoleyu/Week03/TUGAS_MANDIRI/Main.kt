@@ -1,4 +1,4 @@
-package oop_00000138850_VasselGoleyu.week03
+package oop_00000138850_VasselGoleyu.Week03
 
 fun main() {
 
