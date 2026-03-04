@@ -2,6 +2,8 @@ package oop_00000138850_vasselgoleyu.week05
 
 fun main() {
 
+    println("===== POLYMORPHISM PEGAWAI =====")
+
     val daftarPegawai: List<Pegawai> = listOf(
         Dosen("Alexander"),
         Admin("Budi")
@@ -19,4 +21,12 @@ fun main() {
 
         println("--------------------")
     }
+
+    println("\n===== OVERLOADING =====")
+
+    val math = MathHelper()
+
+    println("Luas Persegi: ${math.hitungLuas(4)}")
+    println("Luas Persegi Panjang: ${math.hitungLuas(4, 5)}")
+    println("Luas Lingkaran: ${math.hitungLuas(7.0)}")
 }
