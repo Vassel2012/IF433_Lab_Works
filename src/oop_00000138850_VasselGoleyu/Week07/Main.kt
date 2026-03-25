@@ -6,5 +6,8 @@ fun main() {
     val result = when (response) {
         is ApiResponse.Success -> "Success"
         is ApiResponse.Error -> "Error"
+        ApiResponse.Loading -> "Loading"
     }
+
+    println(result)
 }
