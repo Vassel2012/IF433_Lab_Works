@@ -11,4 +11,10 @@ fun main() {
 
     println(u1)
     println(u1 == u2)
+
+    val d1 = UserData("A", 20)
+    val d2 = UserData("A", 20)
+
+    println(d1)
+    println(d1 == d2)
 }

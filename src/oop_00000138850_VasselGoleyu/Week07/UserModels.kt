@@ -1,3 +1,5 @@
 package oop_00000138850_VasselGoleyu.Week07
 
 class User(val name: String, val age: Int)
+
+data class UserData(val name: String, val age: Int)
