@@ -24,9 +24,3 @@ fun main() {
     println("NIM: ${student.nim}")
     println("Jurusan: ${student.major}")
 }
-
-class Student(
-    val name: String,
-    val nim: String,
-    val major: String
-)
