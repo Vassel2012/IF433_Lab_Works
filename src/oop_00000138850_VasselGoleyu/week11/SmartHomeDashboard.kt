@@ -48,4 +48,12 @@ fun main() {
 
     val totalPower = homeDevices.run { sumOf { it.powerLoad } }
     println("Total konsumsi daya: $totalPower Watt")
+
+    println("\n=== DIAGNOSTIK SEMUA PERANGKAT ===")
+    homeDevices.forEach { device ->
+        println(device.diagnose())
+    }
+
+    println("\n✅ Semua pipeline konfigurasi Smart Home berhasil!")
+    println("[System exit, and have a well-deserved rest!]")
 }
