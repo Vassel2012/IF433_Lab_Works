@@ -1,4 +1,4 @@
-package oop_00000138850_VasselGoleyu.week10
+package oop_00000138850_VasselGoleyu.Week10
 
 fun main() {
     println("=== TEST GENERIC CLASS ===")
