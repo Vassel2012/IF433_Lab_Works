@@ -19,4 +19,17 @@ fun main() {
     val response = ApiResponse("200 OK", coinRepo.getAll())
     println("Status HTTP : ${response.status}")
     println("Jumlah data : ${response.data.size} koin diterima dari server")
+
+    println("\n=== DAFTAR PORTOFOLIO KOIN ===")
+    println("┌────────────┬──────────────────────┐")
+    println("│ Nama Koin  │ Balance              │")
+    println("├────────────┼──────────────────────┤")
+    response.data.forEach { coin ->
+        println("│ %-10s │ %-20.4f │".format(coin.name, coin.balance))
+    }
+    println("└────────────┴──────────────────────┘")
+
+    println("\n=== DEMO FITUR SEARCH ===")
+    val searchResult = coinRepo.search("BTC")
+    println("Hasil pencarian 'BTC': $searchResult")
 }
