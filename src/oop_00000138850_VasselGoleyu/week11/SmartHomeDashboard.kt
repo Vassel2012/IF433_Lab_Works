@@ -6,5 +6,13 @@ fun main() {
     println("╚══════════════════════════════════════════╝")
 
     val homeDevices = mutableListOf<SmartDevice>()
-    println("Smart home device list berhasil diinisialisasi.")
+
+    println("\n=== KONFIGURASI PENCAHAYAAN ===")
+    SmartDevice("Philips WiZ Living Room", "Lighting").apply {
+        isOnline = true
+        powerLoad = 12
+    }.also {
+        homeDevices.add(it)
+        println("Lampu ditambahkan: ${it.name}")
+    }
 }
