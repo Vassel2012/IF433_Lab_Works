@@ -24,4 +24,14 @@ fun main() {
         println("(LOG) Kamera terhubung")
         homeDevices.add(it)
     }
+
+    println("\n=== KONFIGURASI AC & KABEL ===")
+    val ac = run {
+        SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800)
+    }
+    homeDevices.add(ac)
+    println("AC ditambahkan: ${ac.name}")
+
+    homeDevices.add(SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10))
+    println("Pet feeder ditambahkan.")
 }
