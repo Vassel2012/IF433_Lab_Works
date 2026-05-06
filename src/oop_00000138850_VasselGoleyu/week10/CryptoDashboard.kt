@@ -32,4 +32,25 @@ fun main() {
     println("\n=== DEMO FITUR SEARCH ===")
     val searchResult = coinRepo.search("BTC")
     println("Hasil pencarian 'BTC': $searchResult")
+
+    println("\n=== MENGISI DATA TRANSAKSI ===")
+    val txRepo = WalletRepository<Transaction>()
+    txRepo.add(Transaction("TX-001", 2500.00))
+    txRepo.add(Transaction("TX-002",  800.50))
+    txRepo.add(Transaction("TX-003",  150.00))
+    txRepo.add(Transaction("TX-004", 3200.75))
+    txRepo.add(Transaction("TX-005",  420.00))
+    println("Total transaksi tersimpan: ${txRepo.getCount()} transaksi")
+
+    val txResponse = ApiResponse("200 OK", txRepo.getAll())
+
+    println("\n=== RIWAYAT TRANSAKSI ===")
+    println("Status HTTP : ${txResponse.status}")
+    println("┌─────────────┬──────────────────────┐")
+    println("│ ID Transaksi│ Amount (USD)          │")
+    println("├─────────────┼──────────────────────┤")
+    txResponse.data.forEach { tx ->
+        println("│ %-11s │ $%-20.2f│".format(tx.id, tx.amount))
+    }
+    println("└─────────────┴──────────────────────┘")
 }
