@@ -6,5 +6,12 @@ fun main() {
     println("╚══════════════════════════════════════════╝")
 
     val coinRepo = WalletRepository<Coin>()
-    println("Coin repository berhasil diinisialisasi.")
+
+    println("\n=== MENGISI DATA KOIN ===")
+    coinRepo.add(Coin("BTC",  0.85))
+    coinRepo.add(Coin("ETH",  4.20))
+    coinRepo.add(Coin("USDT", 1500.0))
+    coinRepo.add(Coin("BNB",  3.75))
+    coinRepo.add(Coin("SOL",  12.50))
+    println("Total koin tersimpan: ${coinRepo.getCount()} jenis")
 }
