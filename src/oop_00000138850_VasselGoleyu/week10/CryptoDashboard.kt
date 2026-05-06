@@ -53,4 +53,28 @@ fun main() {
         println("│ %-11s │ $%-20.2f│".format(tx.id, tx.amount))
     }
     println("└─────────────┴──────────────────────┘")
+
+    println("\n=== PENGUJIAN AKHIR ===")
+    val hargaSimulasi = mapOf(
+        "BTC"  to 67000.0,
+        "ETH"  to  3200.0,
+        "USDT" to     1.0,
+        "BNB"  to   580.0,
+        "SOL"  to   175.0
+    )
+
+    var totalPortofolio = 0.0
+    response.data.forEach { coin ->
+        val harga    = hargaSimulasi[coin.name] ?: 0.0
+        val nilaiUSD = coin.balance * harga
+        totalPortofolio += nilaiUSD
+        println("${coin.name}: ${coin.balance} koin x \$${harga} = \$${"%.2f".format(nilaiUSD)}")
+    }
+
+    val totalVolumeTx = txResponse.data.sumOf { it.amount }
+
+    println("\n💰 Total Nilai Portofolio : \$${"%.2f".format(totalPortofolio)}")
+    println("📊 Total Volume Transaksi : \$${"%.2f".format(totalVolumeTx)}")
+    println("\n✅ Semua sistem berjalan tanpa error tipe!")
+    println("[System exit, and keep your logic immutable!]")
 }
