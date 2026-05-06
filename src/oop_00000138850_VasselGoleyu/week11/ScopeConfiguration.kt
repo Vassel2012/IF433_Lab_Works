@@ -1,4 +1,4 @@
-package oop_00000138850_VasselGoleyu.Week11
+package oop_00000138850_VasselGoleyu.week11
 
 data class User(var name: String = "", var age: Int = 0)
 
@@ -20,5 +20,11 @@ fun main() {
     println("\n=== TEST WITH ===")
     with(user) {
         println("User Detail -> Nama: $name, Umur: $age")
+    }
+
+    val newUser = User("Budi", 20).apply {
+        age = 21
+    }.also {
+        println("User baru berhasil dibuat: $it")
     }
 }
