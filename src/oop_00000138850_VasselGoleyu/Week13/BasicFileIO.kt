@@ -8,5 +8,8 @@ fun main() {
 
     file.writeText("Belajar File I/O Kotlin\n")
 
+    file.appendText("Baris kedua ditambahkan\n")
+    file.appendText("Baris ketiga ditambahkan\n")
+
     println("Berhasil menulis file")
 }
