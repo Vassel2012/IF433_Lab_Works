@@ -11,5 +11,14 @@ fun main() {
     file.appendText("Baris kedua ditambahkan\n")
     file.appendText("Baris ketiga ditambahkan\n")
 
-    println("Berhasil menulis file")
+    println("=== readText ===")
+    println(file.readText())
+
+    println("=== readLines ===")
+
+    val lines = file.readLines()
+
+    lines.forEach {
+        println(it)
+    }
 }
