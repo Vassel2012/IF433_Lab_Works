@@ -11,4 +11,12 @@ fun main() {
     writer.close()
 
     println("Writer ditutup manual")
+
+    File("safe.txt").printWriter().use { writer2 ->
+
+        writer2.println("Menggunakan use block")
+        writer2.println("Auto close stream")
+    }
+
+    println("use block selesai")
 }
