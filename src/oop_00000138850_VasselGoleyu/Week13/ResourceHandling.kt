@@ -19,4 +19,13 @@ fun main() {
     }
 
     println("use block selesai")
+
+    println("=== Buffered Reader ===")
+
+    File("safe.txt").bufferedReader().use { reader ->
+
+        reader.forEachLine {
+            println(it)
+        }
+    }
 }
